@@ -1,0 +1,29 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: admin
+  security:
+      # 登陆所需的账号密码
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      ui:
+        title: springcloud服务监控中心
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

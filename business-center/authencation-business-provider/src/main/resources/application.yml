@@ -1,0 +1,28 @@
+server:
+  port: 3100
+spring:
+  application:
+    name: author-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cv?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    password: root
+    username: root
+eureka:
+  client:
+
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

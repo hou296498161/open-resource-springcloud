@@ -1,0 +1,21 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: cache-center
+  redis:
+    host: 39.101.220.90
+    database: 0
+    port: 520
+    password: beauhou
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1
+    timeout: 300
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:6001/eureka/
